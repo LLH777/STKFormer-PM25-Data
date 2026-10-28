@@ -14,7 +14,3 @@ The study described in the manuscript covers **Beijing, Shanghai, Guangzhou, and
 ## Important note
 
 This repository provides source links and a brief description; it **does not host the raw experimental dataset**. Some data may require registration or authorization, and provider terms may restrict redistribution. These links are official access points, not a guarantee of unrestricted bulk download. Please confirm the exact dataset/product versions against the original acquisition records and follow each provider's terms.
-
-## Webpage
-
-The project webpage is in `index.html`. To publish it at a public website URL, enable **GitHub Pages** in the repository settings and select the `main` branch and `/(root)` as the publishing source.
