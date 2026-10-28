@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Data sources for STKFormer, a multi-source framework for long-term PM2.5 forecasting.">
+  <title>STKFormer | Data Sources</title>
+  <style>
+    :root { color-scheme: light; --ink: #202938; --muted: #5f6b7a; --line: #e2e7ed; --blue: #2457a7; --paper: #ffffff; --wash: #f6f8fb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--wash); color: var(--ink); font: 16px/1.65 Arial, Helvetica, sans-serif; }
+    main { width: min(860px, calc(100% - 32px)); margin: 48px auto; }
+    header, section, footer { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+    header { border-top: 4px solid var(--blue); }
+    h1 { margin: 0 0 8px; font-size: clamp(26px, 4vw, 34px); line-height: 1.2; }
+    h2 { margin: 0 0 12px; font-size: 20px; }
+    p { margin: 8px 0; }
+    .subtitle, .muted { color: var(--muted); }
+    section { margin-top: 18px; }
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 18px; }
+    .fact { background: var(--wash); border-radius: 8px; padding: 12px 14px; }
+    .fact strong { display: block; font-size: 14px; color: var(--muted); font-weight: 600; }
+    .fact span { display: block; margin-top: 3px; font-weight: 600; }
+    .source { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 0; border-top: 1px solid var(--line); }
+    .source:first-of-type { border-top: 0; }
+    .source p { margin: 3px 0 0; color: var(--muted); font-size: 14px; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .link { white-space: nowrap; font-weight: 600; }
+    .note { background: #f8fafc; border-left: 3px solid #9aa8ba; padding: 12px 14px; color: var(--muted); font-size: 14px; }
+    footer { margin-top: 18px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 560px) { main { margin: 20px auto; } header, section, footer { padding: 18px; } .source { align-items: flex-start; flex-direction: column; gap: 6px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>STKFormer: Data Sources</h1>
+      <p class="subtitle">Data access guide for long-term PM<sub>2.5</sub> forecasting with industrial influence and regional spatial context.</p>
+      <p>STKFormer combines air-quality observations, meteorological variables, industrial spatial information, and historical aerosol optical depth (AOD) to support multi-source spatiotemporal forecasting.</p>
+      <div class="facts">
+        <div class="fact"><strong>Study period</strong><span>2021–2023</span></div>
+        <div class="fact"><strong>Study cities</strong><span>Beijing · Shanghai · Guangzhou · Tangshan</span></div>
+        <div class="fact"><strong>Monitoring network</strong><span>78 air-quality stations</span></div>
+        <div class="fact"><strong>Forecast horizon</strong><span>72 hours</span></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Data access</h2>
+      <div class="source">
+        <div>
+          <strong>Air-quality observations</strong>
+          <p>PM<sub>2.5</sub>, PM<sub>10</sub>, NO<sub>2</sub>, CO, O<sub>3</sub>, and SO<sub>2</sub>.</p>
+        </div>
+        <a class="link" href="https://www.cnemc.cn/" target="_blank" rel="noopener noreferrer">CNEMC portal ↗</a>
+      </div>
+      <div class="source">
+        <div>
+          <strong>Meteorological observations</strong>
+          <p>Wind speed, temperature, precipitation, surface pressure, and relative humidity.</p>
+        </div>
+        <a class="link" href="https://k.data.cma.cn/mekb/?r=site%2Findexdata" target="_blank" rel="noopener noreferrer">CMA data portal ↗</a>
+      </div>
+      <div class="source">
+        <div>
+          <strong>Industrial points of interest (POIs)</strong>
+          <p>Factory and industrial locations used to derive station-level spatial influence features.</p>
+        </div>
+        <a class="link" href="https://lbs.amap.com/" target="_blank" rel="noopener noreferrer">Amap Open Platform ↗</a>
+      </div>
+      <div class="source">
+        <div>
+          <strong>MODIS MAIAC aerosol optical depth</strong>
+          <p>Regional AOD context used in the spatial-context component. Confirm the exact product and collection against the original acquisition records.</p>
+        </div>
+        <a class="link" href="https://ladsweb.modaps.eosdis.nasa.gov/missions-and-measurements/products/MCD19A2" target="_blank" rel="noopener noreferrer">NASA product page ↗</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data availability</h2>
+      <p class="note">This page links to the original providers; it does not host the raw experimental dataset. Some sources may require registration, authorization, or compliance with provider terms. The links are access portals, not a guarantee of unrestricted bulk download. Please follow each provider's license and data-use conditions.</p>
+    </section>
+
+    <footer>
+      STKFormer · Data-source information for research transparency and reproducibility.
+    </footer>
+  </main>
+</body>
+</html>
